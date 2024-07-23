@@ -27,6 +27,10 @@ document.getElementById("form").addEventListener('submit', function(event){
     var date = document.getElementById('date').value;
     var message = document.getElementById('message').value;
 
+    const Data = [name, people, date, message]
+
+    Data.forEach(item => console.log(item));
+    window.alert("your data: "+ Data.join(" "))
 
     const formData ={
         name: name,
@@ -34,6 +38,7 @@ document.getElementById("form").addEventListener('submit', function(event){
         date: date,
         message:message
     };
-    console.log('formData', formData);
-    window.alert("form data receved!")
+    
+    localStorage.setItem('formData', JSON.stringify(formData));
+    
 });
